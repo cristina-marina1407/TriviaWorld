@@ -42,7 +42,7 @@ class TriviaWorlds:
         master.resizable(True, True)
 
         self.original_bg = Image.open(BACKGROUND_IMAGE).convert('RGB')
-        base = self.original_bg.resize((DEFAULT_WIDTH, DEFAULT_HEIGHT), Image.ANTIALIAS)
+        base = self.original_bg.resize((DEFAULT_WIDTH, DEFAULT_HEIGHT), Image.Resampling.LANCZOS)
 
         faded = Image.blend(base, Image.new('RGB', base.size, 'white'), BG_FADE)
         self.bg_photo = ImageTk.PhotoImage(faded)
@@ -63,8 +63,9 @@ class TriviaWorlds:
         if event.widget == self.master:
             w, h = event.width, event.height
 
-            base = self.original_bg.resize((w, h), Image.ANTIALIAS)
+            base = self.original_bg.resize((w, h), Image.Resampling.LANCZOS)
             faded = Image.blend(base, Image.new('RGB', base.size, 'white'), BG_FADE)
+
             self.bg_photo = ImageTk.PhotoImage(faded)
             self.background_label.config(image=self.bg_photo)
 
