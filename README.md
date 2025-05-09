@@ -108,3 +108,5 @@ the functionalities of the game itself:
     - `set_background`
         This method sets the background image for the game. It ensures the
         background is displayed behind all other widgets.
+
+      ##### Copyright https://gist.github.com/cmota/f7919cd962a061126effb2d7118bec72 for the used questions
